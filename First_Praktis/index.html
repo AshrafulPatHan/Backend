@@ -3,9 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>DomeManagement_1</title>
+    <!-- Tailwind css -->
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
 </head>
-<body>
+<body class="flex flex-col gap-6 items-center">
     <h2>Hello World</h2>
+    <button onclick="handelAlert()" class="w-20 p-5 px-5 bg-[#ff2f] ">click</button>
+    <script>
+        console.log("hello world");
+        function handelAlert() {
+            alert('hello')
+        }
+    </script>
 </body>
 </html>

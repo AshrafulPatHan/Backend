@@ -3,9 +3,12 @@ import express from "express"
 const app = express()
 const port = 5022
 
-app.get('/', (req, res) => {
-  res.send('Server is running !')
-})
+// app.get('/', (req, res) => {
+//   res.send('Server is running !')
+// })
+
+// strate site
+app.use(express.static('dist'));
 
 app.get('/data', (req,res) => {
   res.send('hello')

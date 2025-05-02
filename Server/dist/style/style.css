@@ -3,6 +3,13 @@
    padding: 0px;
    background: #0a0a0a;
    color: #f7f4f4;
+   font-family: Montserrat;
+}
+
+/* using font */
+@font-face{
+   font-family: 'Montserrat';
+   src: url('../asset/Montserrat-Regular.ttf') format('truetype'); 
 }
 
 /* primary div */

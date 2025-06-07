@@ -1,0 +1,17 @@
+{
+  "name": "pro",
+  "version": "1.0.0",
+  "description": "a profational backend lerning",
+  "keywords": [
+    "javascript",
+    "backend",
+    "learning"
+  ],
+  "license": "ISC",
+  "author": "ashraful",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

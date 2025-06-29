@@ -1,14 +1,7 @@
-
-
-
-
-
-
-
-
-
-
-
+require('dotenv').config()
+import mongoose from "mongoose";
+import { DB_NAME } from './constants';
+import connectDB
 
 
 
@@ -22,7 +15,7 @@ const app = express()
 
 ( async()=>{
     try{
-        await mongoose.connect(`${process.env.MONGODB_URL}/{DB_NAME}`)
+        await mongoose.connect(`${process.env.MONGODB_URL}/${DB_NAME}`)
         app.on("error",(error)=>{
             console.log("app is not work and error",error);
             throw error

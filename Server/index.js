@@ -3,7 +3,7 @@ import express from "express";
 import mongoose from "mongoose";
 const app = express();
 const port = 5000
-// const PoseData = './models/Test';
+// const PostData = './models/Test';
 import PostData from './models/Test.js';
 import connectDB from "./DB/db.js";
 
@@ -91,6 +91,54 @@ app.post('/mongoose', async (req,res)=>{
   }
   
 })
+
+// ✅ READ all data
+app.get("/mongoose", async (req, res) => {
+  try {
+    const allData = await PostData.find();
+    res.json(allData);
+  } catch (error) {
+    res.status(500).send("Server error while fetching");
+  }
+});
+
+// ✅ READ single data by ID
+app.get("/mongoose/:id", async (req, res) => {
+  try {
+    const singleData = await PostData.findById(req.params.id);
+    if (!singleData) return res.status(404).send("Data not found");
+    res.json(singleData);
+  } catch (error) {
+    res.status(500).send("Server error while fetching single data");
+  }
+});
+
+// ✅ UPDATE data by ID
+app.put("/mongoose/:id", async (req, res) => {
+  try {
+    const updatedData = await PostData.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      { new: true, runValidators: true }
+    );
+    if (!updatedData) return res.status(404).send("Data not found");
+    res.json(updatedData);
+  } catch (error) {
+    res.status(500).send("Server error while updating");
+  }
+});
+
+// ✅ DELETE data by ID
+app.delete("/mongoose/:id", async (req, res) => {
+  try {
+    const deleted = await PostData.findByIdAndDelete(req.params.id);
+    if (!deleted) return res.status(404).send("Data not found");
+    res.json({ message: "Data deleted successfully" });
+  } catch (error) {
+    res.status(500).send("Server error while deleting");
+  }
+});
+
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)

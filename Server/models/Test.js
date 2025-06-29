@@ -13,7 +13,7 @@ const TestData = new mongoose.Schema({
 
 // module.exports = mongoose.model('PoseData' ,TestData) => wrong ❎
 
-const PoseData = mongoose.model('PoseData', TestData);
+const PoseData = mongoose.model('PostData', TestData);
 
 export default PoseData;
 

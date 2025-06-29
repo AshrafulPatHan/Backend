@@ -4,7 +4,8 @@ import mongoose from "mongoose";
 const app = express();
 const port = 5000
 // const PoseData = './models/Test';
-import PoseData from './models/Test.js';
+import PostData from './models/Test.js';
+import connectDB from "./DB/db.js";
 
 
 
@@ -15,7 +16,7 @@ import PoseData from './models/Test.js';
 
 app.use(express.json());
 
-
+connectDB()
 
 
 app.get('/', (req, res) => {
@@ -82,7 +83,7 @@ app.post('/mongoose', async (req,res)=>{
   const data = JSON.stringify(BodyData);
   console.log(data);
   try{
-    const saveData = await PoseData.create(BodyData);
+    const saveData = await PostData.create(BodyData);
     res.status(201).json(saveData)
   }catch(error){
     console.error('error is appear in mongoose section',error);

@@ -1,11 +1,21 @@
 // const express = require('express')
-import express from "express"
-const app = express()
+import express from "express";
+import mongoose from "mongoose";
+const app = express();
 const port = 5000
+// const PoseData = './models/Test';
+import PoseData from './models/Test.js';
+
+
+
+// const mongoose = require(mongoose); => this type os mongoose declamation is wrong
+
 
 
 
 app.use(express.json());
+
+
 
 
 app.get('/', (req, res) => {
@@ -67,8 +77,18 @@ app.post('/do',async(req,res)=>{
 
 
 // ------------------- mongoose -------------------
-app.post('/mongoose',(req,res)=>{
-  const
+app.post('/mongoose', async (req,res)=>{
+  const BodyData = req.body;
+  const data = JSON.stringify(BodyData);
+  console.log(data);
+  try{
+    const saveData = await PoseData.create(BodyData);
+    res.status(201).json(saveData)
+  }catch(error){
+    console.error('error is appear in mongoose section',error);
+    res.status(500).send("server error")
+  }
+  
 })
 
 app.listen(port, () => {

@@ -1,19 +1,20 @@
 // const express = require('express')
 import express from "express"
 const app = express()
-const port = 5022
+const port = 5000
 
 
 
 app.use(express.json());
 
 
-// app.get('/', (req, res) => {
-//   res.send('Server is running !')
-// })
+app.get('/', (req, res) => {
+  res.send('Server is running !')
+})
 
 // strate site
-app.use(express.static('dist'));
+// app.use(express.static('dist'));
+
 
 app.get('/data', (req,res) => {
   res.send('hello')
@@ -64,6 +65,11 @@ app.post('/do',async(req,res)=>{
   }
 });
 
+
+// ------------------- mongoose -------------------
+app.post('/mongoose',(req,res)=>{
+  const
+})
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)

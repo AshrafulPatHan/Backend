@@ -16,12 +16,12 @@ import connectDB from "./DB/db.js";
 
 app.use(express.json());
 
-connectDB()
+connectDB();
 
 
 app.get('/', (req, res) => {
   res.send('Server is running !')
-})
+});
 
 // strate site
 // app.use(express.static('dist'));
@@ -29,7 +29,7 @@ app.get('/', (req, res) => {
 
 app.get('/data', (req,res) => {
   res.send('hello')
-})
+});
 
 app.get('/snack', (req,res) =>{
   const snack = [
@@ -47,7 +47,7 @@ app.get('/snack', (req,res) =>{
     }
   ]
   res.send(snack)
-})
+});
 
 // post data
 
@@ -90,7 +90,7 @@ app.post('/mongoose', async (req,res)=>{
     res.status(500).send("server error")
   }
   
-})
+});
 
 // ✅ READ all data
 app.get("/mongoose", async (req, res) => {
@@ -142,6 +142,6 @@ app.delete("/mongoose/:id", async (req, res) => {
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
-})
+});
 
 

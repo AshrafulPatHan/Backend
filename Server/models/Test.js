@@ -6,10 +6,10 @@ const TestData = new mongoose.Schema({
         required:true
     },
     aeg:{
-        type:String,
+        type:Number,
         required:true
     },
-}, {timestamps:true})
+}, {timestamps:true});
 
 // module.exports = mongoose.model('PoseData' ,TestData) => wrong ❎
 

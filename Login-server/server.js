@@ -2,8 +2,8 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const cors = require('cors');
-const Login = require('./src/login');
-const Signup = require('./src/registration');
+const Login = require('./src/login'); 
+const Signup = require('./src/registration'); 
 const PORT = 3000;
 
 

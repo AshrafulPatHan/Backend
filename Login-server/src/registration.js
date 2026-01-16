@@ -3,7 +3,7 @@ router = express.Router();
 
 // route for login
 router.get('/signup-api', (req, res) => {
-    res.send('Signup Page');
+    res.send('Signup api');
 });
 
 module.exports = router;

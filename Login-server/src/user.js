@@ -3,7 +3,7 @@ router = express.Router();
 
 // route for login
 router.get('/user-api', (req, res) => {
-    res.send('user Page');
+    res.send('user api');
 });
 
 module.exports = router;

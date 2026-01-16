@@ -1,11 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>registration</title>
 </head>
+
 <body>
-    registration
+    <h3>registration</h3>
+    <form class="From-Signup" style="display: flex; flex-direction: column; width: 250px; gap: 10px; ">
+        <input type="text" name="name" id="name" placeholder="name">
+        <input type="email" name="email" id="email" placeholder="email">
+        <input type="text" name="password" id="password" placeholder="password">
+        <input type="file" name="file" id="file">
+        <div style="border: 1px solid black; margin-top: 4px; width: 200px;">
+            <p>
+                <input type="checkbox" name="checkbox" id="checkbox">
+                <label for="option1"> democracy</label>
+            </p>
+            <p>
+                <input type="checkbox" name="checkbox" id="checkbox">
+                <label for="option1"> communism</label>
+            </p>
+            <p>
+                <input type="checkbox" name="checkbox" id="checkbox">
+                <label for="option1"> Caliphate</label>
+            </p>
+        </div>
+
+        <p>
+            <button type="submit">submit</button>
+        </p>
+    </form>
+
+    <hr>
+    <a href="/login">or Login</a>
+    
 </body>
+
 </html>

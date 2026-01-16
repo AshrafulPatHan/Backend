@@ -2,8 +2,8 @@ const express = require('express');
 router = express.Router();
 
 // route for login
-router.get('/login', (req, res) => {
-    res.send('Login Page');
+router.get('/signup-api', (req, res) => {
+    res.send('Signup Page');
 });
 
 module.exports = router;

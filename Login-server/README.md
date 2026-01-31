@@ -10,9 +10,10 @@ registration
 - user password
 - user photo # user upload the photo
 - check trams and condition 
+- api =>{name,email,password,photo,political}
 
 
 login
 - user email
 - user password
-
+- api =>{email,password}
